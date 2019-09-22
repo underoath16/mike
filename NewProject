@@ -1,0 +1,15 @@
+#!/bin/bash
+
+firstname=$(shuf /home/michael.whitesel/Files/change.log | head -1 | sed 's!\([^ ]\+\).\+!\1!')
+
+phonenumber=$(shuf -i 1000000-9999999 -n 1 | sed 's/\(...\)/\1-/')
+
+lastname=$(shuf /home/michael.whitesel/Files/change.log | tail -1 | sed 's!\([^ ]\+\).\+!\1!') 
+
+#echo "$phonenumber" >> /home/michael.whitesel/Files/PhoneNumbers.txt
+
+#echo "$lastname" >> /home/michael.whitesel/Files/LastNames.txt
+
+#testing arrays
+
+echo "First Name: ${firstname[@]}, Last Name: ${lastname[@]}, Phone Number: ${phonenumber[@]}"
